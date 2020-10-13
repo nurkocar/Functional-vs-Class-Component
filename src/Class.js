@@ -7,10 +7,24 @@ class App extends Component {
         this.state = {
             counter: 0
         }
+        console.log('Constructor done..')
+    }
+
+    // render ile normal fonksiyonun farkini gormek icin yaptik
+    myFunction(){
+        let myVariable = 10;
+
+        myVariable++;
+
+        console.log('My Function: ' + myVariable);
+    }
+
+    componentDidMount(){
+        console.log('Component did mount done...')
     }
 
     render() {
-        console.log('Render class...')
+        console.log('Render done...')
         return (
             <>
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
@@ -33,6 +47,11 @@ class App extends Component {
                         onPress = {() => this.setState({
                             counter: 0
                         })}
+                    />
+
+                    <Button
+                        title = 'Check console for normal function!'
+                        onPress = {() => this.myFunction}
                     />
                 </View>
             </>
