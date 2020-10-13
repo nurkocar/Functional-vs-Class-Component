@@ -10,6 +10,7 @@ class App extends Component {
     }
 
     render() {
+        console.log('Render class...')
         return (
             <>
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
@@ -19,6 +20,18 @@ class App extends Component {
                         title = 'Up!'
                         onPress = {() => this.setState({
                             counter: this.state.counter + 1
+                        })}
+                    />
+                    <Button
+                        title = 'Down!'
+                        onPress = {() => this.setState({
+                            counter: this.state.counter - 1
+                        })}
+                    />
+                    <Button
+                        title = 'Reset!'
+                        onPress = {() => this.setState({
+                            counter: 0
                         })}
                     />
                 </View>
