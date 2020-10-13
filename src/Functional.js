@@ -4,7 +4,8 @@ import { View, Text, Button } from 'react-native';
 
 const App = (props) => {
 
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0);
+    const updateCounter = () => {setCounter(counter + 1)}
 
     return (
         <>
@@ -13,11 +14,18 @@ const App = (props) => {
 
                 <Button
                     title='Up!'
-                    onPress={() => setCounter(counter + 1)}
+                    onPress={updateCounter}
+                />
+
+                <Button 
+                    title='Reset'
+                    onPress={() => setCounter(0)}
                 />
             </View>
         </>
     )
+
+    
 }
 
 export default App;
